@@ -57,6 +57,7 @@ class HeatMapper:
     def __init_color_map(self):
         base_color = self.color_map(0)[0:3]
         base_color = [int(color_val * 255) for color_val in base_color]
+        self.key_name_to_count = {k: 0 for k, _ in self.key_to_location_map.items()}
 
         for key, location_list in self.key_to_location_map.items():
             for location in location_list:
